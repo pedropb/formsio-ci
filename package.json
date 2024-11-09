@@ -4,6 +4,7 @@
   "main": "src/server/index.js",
   "scripts": {
     "start": "node src/server/index.js",
+    "dev": "nodemon src/server/index.js",
     "test": "start-server-and-test start http://localhost:3000 'cypress run'"
   },
   "dependencies": {
@@ -12,6 +13,7 @@
   },
   "devDependencies": {
     "cypress": "^13.6.6",
+    "nodemon": "^3.0.3",
     "start-server-and-test": "^2.0.3"
   }
 }
