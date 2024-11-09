@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:3000:3000"
+    networks:
+      - test-network
+
+  cypress:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    depends_on:
+      web:
+        condition: service_healthy
+    volumes:
+      - ./cypress:/app/cypress:z
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge

@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
 <head>
     <title>Form.io Demo</title>
     <link rel="stylesheet" href="https://cdn.form.io/formiojs/formio.full.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div id="formio"></div>
+<body class="bg-gray-100 h-full flex items-center justify-center p-4">
+    <div class="w-full max-w-md">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+            <h1 class="text-2xl font-bold mb-6 text-gray-800">Welcome</h1>
+            <div id="formio"></div>
+            <div id="greeting" class="hidden mt-6 p-4 bg-blue-50 text-blue-700 rounded-md border border-blue-200"></div>
+        </div>
+    </div>
     <script src="https://cdn.form.io/formiojs/formio.full.min.js"></script>
     <script src="js/app.js"></script>
 </body>

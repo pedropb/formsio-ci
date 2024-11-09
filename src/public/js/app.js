@@ -1,6 +1,25 @@
 Formio.createForm(document.getElementById('formio'), {
   components: [
     {
+      type: 'select',
+      key: 'title',
+      label: 'Title',
+      placeholder: 'Select a title',
+      validate: {
+        required: true
+      },
+      data: {
+        values: [
+          { label: 'Mr.', value: 'Mr.' },
+          { label: 'Mrs.', value: 'Mrs.' },
+          { label: 'Ms.', value: 'Ms.' },
+          { label: 'Dr.', value: 'Dr.' },
+          { label: 'Prof.', value: 'Prof.' }
+        ]
+      },
+      input: true
+    },
+    {
       type: 'textfield',
       key: 'firstName',
       label: 'First Name',
@@ -12,6 +31,9 @@ Formio.createForm(document.getElementById('formio'), {
       key: 'lastName',
       label: 'Last Name',
       placeholder: 'Enter your last name',
+      validate: {
+        required: true
+      },
       input: true
     },
     {
@@ -22,7 +44,13 @@ Formio.createForm(document.getElementById('formio'), {
     }
   ]
 }).then(function(form) {
-  form.on('submit', function(submission) {
-    console.log('Form submission:', submission);
+  form.on('submitButton', function(event) {
+    event.preventDefault();
+    
+    const data = form.submission.data;
+    
+    const greeting = document.getElementById('greeting');
+    greeting.innerHTML = `Hello, ${data.title} ${data.firstName || ''} ${data.lastName}`;
+    greeting.classList.remove('hidden');
   });
 }); 

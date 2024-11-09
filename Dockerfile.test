@@ -1,0 +1,11 @@
+FROM cypress/included:13.6.6
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY cypress.config.js .
+COPY cypress ./cypress
+
+RUN npm install cypress
+
+CMD ["npx", "cypress", "run"] 

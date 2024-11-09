@@ -1,9 +1,57 @@
-body {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
+#formio {
+    margin-top: 0;
 }
 
-#formio {
+#greeting {
     margin-top: 20px;
-} 
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    font-size: 1.2em;
+}
+
+/* Override Form.io styles to match Tailwind */
+.formio-component {
+    margin-bottom: 1.5rem;
+}
+
+.formio-component input,
+.formio-component select {
+    width: 100%;
+    border-radius: 0.375rem;
+    border-color: #e5e7eb;
+    padding: 0.5rem 0.75rem;
+}
+
+.formio-component input:focus,
+.formio-component select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px #93c5fd;
+}
+
+.btn-primary {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    width: 100%;
+    padding: 0.75rem !important;
+    border-radius: 0.375rem !important;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+}
+
+/* Style validation errors */
+.formio-error-wrapper {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.has-error input,
+.has-error select {
+    border-color: #dc2626;
+}

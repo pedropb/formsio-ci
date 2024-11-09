@@ -21,4 +21,8 @@ build/
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
