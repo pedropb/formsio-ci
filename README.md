@@ -1,5 +1,7 @@
 # Forms.io Demo
 
+![Build status](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=feature-1)
+
 A demo application showcasing form validation with automated testing using Cypress.
 
 ## Prerequisites
