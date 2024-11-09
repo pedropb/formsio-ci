@@ -48,7 +48,7 @@ Formio.createForm(document.getElementById('formio'), {
         const data = submission.data;
 
         const greeting = document.getElementById('greeting');
-        greeting.innerHTML = `Hello, ${data.title} ${data.firstName || ''} ${data.lastName}`;
+        greeting.innerHTML = `Bonjour, ${data.title} ${data.firstName || ''} ${data.lastName}`;
         greeting.classList.remove('hidden');
     });
 }); 
