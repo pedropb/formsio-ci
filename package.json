@@ -1,19 +1,23 @@
 {
   "name": "formsio-ci",
   "version": "1.0.0",
-  "main": "src/server/index.js",
+  "volta": {
+    "node": "20.11.1",
+    "npm": "10.2.4"
+  },
   "scripts": {
     "start": "node src/server/index.js",
-    "dev": "nodemon src/server/index.js",
-    "test": "start-server-and-test start http://localhost:3000 'cypress run'"
+    "test": "start-server-and-test start http://localhost:3000 test:e2e",
+    "test:debug": "start-server-and-test start http://localhost:3000 test:e2e:debug",
+    "test:e2e": "cypress run",
+    "test:e2e:debug": "cypress open"
   },
   "dependencies": {
     "express": "^4.18.2",
     "formiojs": "^4.17.3"
   },
   "devDependencies": {
-    "cypress": "^13.6.6",
-    "nodemon": "^3.0.3",
-    "start-server-and-test": "^2.0.3"
+    "cypress": "^13.15.2",
+    "start-server-and-test": "^2.0.8"
   }
 }

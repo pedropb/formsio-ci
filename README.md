@@ -1,10 +1,32 @@
-# Form.io CI Demo
+# Forms.io Demo
 
-A demonstration project showing Form.io integration with a containerized development environment using Podman.
+A demo application showcasing form validation with automated testing using Cypress.
 
-## Quick Start 
+## Prerequisites
 
-1. Ensure you have Podman installed
-2. Clone the repository
-3. Run `./bin/dev.sh`
-4. Open your browser and navigate to `http://localhost:3000`
+- [Volta](https://volta.sh/) - JavaScript Tool Manager
+
+## Setup
+
+Volta will automatically install the correct Node.js version when you run npm commands in this repository.
+
+## Quick start
+
+1. `npm install`
+2. `npm test`: run e2e tests locally
+3. `npm start`: run server locally
+
+## Developing
+
+- Write test cases - e.g.: `cypress/e2e/form.cy.js`
+- Implement features - e.g.: `src/app.js` using FormIO
+- `npm test`
+
+## Debugging
+
+There are many ways to debug tests.
+
+1. cypress will output each test result after `npm test`
+2. cypress also records screenshots in `cypress/screenshots` for the failed runs at the state it failed
+3. `npm run test:debug` will open the cypress UI for step-by-step debugging.
+   - You can also use [`debugger` and `.debug()`](https://docs.cypress.io/app/guides/debugging) for break points and additional information.
